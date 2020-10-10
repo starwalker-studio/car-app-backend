@@ -1,0 +1,50 @@
+<div class="loading-content" ng-show="loading">
+	<img src="resources/img/loading_logo.png" class="loading-logo animate-fading">
+</div>
+
+<div class="display-card-row" ng-show="!loading">
+	<nav class="col-md-2 bg-light sidebar sidebar-profile">
+		<div class="sidebar-sticky">
+			<ul class="nav flex-column">
+
+				<li class="nav-item"><a class="nav-link" type="button" ng-click="dashboardLink()">
+				Dashboard<i class="fa fa-tachometer" aria-hidden="true"></i></a></li>
+
+				<li class="nav-item"><a class="nav-link" type="button" ng-click="profileLink()">
+				Profile <i class="fa fa-user-circle" aria-hidden="true"></i></a></li>
+
+				<li class="nav-item"><a class="nav-link" href="#">
+				My Cars <i class="fa fa-car" aria-hidden="true"></i></a></li>
+
+				<li class="nav-item"><a class="nav-link" href="#">
+				Account <i class="fa fa-cog" aria-hidden="true"></i></a></li>
+
+				<li class="nav-item"><a class="nav-link" href="#">
+				Bank<i class="fa fa-credit-card" aria-hidden="true"></i></a></li>
+
+			</ul>
+
+			<h6 class="sidebar-heading px-3 mt-4 mb-1 text-muted" style="margin-right: 9px;">
+			<span>Messages</span><i class="fa fa-envelope" aria-hidden="true"></i>
+			</h6>
+
+		</div>
+	</nav>
+	<!-- DashBoard -->
+	<div id="dashboard" 
+			class="card-container" 
+			ng-controller="dashboardCtrl"
+			ng-include src="'resources/core/user-profile/dashboard/dashboard.html'" 
+			ng-show="dashBoard">		
+
+	</div>
+	<!-- Profile -->
+	<div id="profile" 
+			class="card-container"
+			ng-controller="profileCtrl"
+			ng-include src="'resources/core/user-profile/edit-profile/profile.html'"  
+			ng-show="userProfile">
+		
+	</div>
+
+</div>

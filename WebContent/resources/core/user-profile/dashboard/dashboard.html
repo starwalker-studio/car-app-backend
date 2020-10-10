@@ -1,0 +1,66 @@
+<div class="card-body-header">
+	<h3 class="">{{user.name}}</h3>
+	<p class="">{{user.profesion}}</p>
+</div>
+
+<div class="display-card-row-container">
+	<div class="card-body">
+		<h5 class="font-weight-bold">My info</h5>
+		<p>{{user.user_msj}}</p>
+		<div>
+		<table class="table">  
+		  <tbody>
+		    <tr>
+		      <th scope="row" style="text-align: left;">Full Name:</th>
+		      <td>{{user.name}} {{user.last_name}}</td>
+		    </tr>
+		    <tr>
+		      <th scope="row" style="text-align: left;">Location:</th>
+		      <td>{{user.location}}</td>
+		    </tr>
+		    <tr>
+		      <th scope="row" style="text-align: left;">Adress:</th>
+		      <td>{{user.direction}}</td>
+		    </tr>
+		    <tr>
+		      <th scope="row" style="text-align: left;">Phone:</th>
+		      <td>{{user.phone}}</td>
+		    </tr>
+		    <tr>
+		      <th scope="row" style="text-align: left;">Mail:</th>
+		      <td>{{user.mail}}</td>
+		    </tr>
+		    <tr>
+		      <th scope="row" style="text-align: left;">Date Register:</th>
+		      <td>{{user.date_register}}</td>
+		    </tr>
+		  </tbody>
+		</table>		
+		</div>
+
+	</div>
+	<div class="card-body">
+		<div class="card-info">
+
+			<div class="fix-table">
+				<table class="table no-footer" id="tablaaaaa">
+					<thead class="">
+						<tr>
+							<th class="">My Cars</th>
+							<th class="">Payment process</th>
+						</tr>
+					</thead>
+					<tbody id="purchases" class="">
+						<tr class="" ng-repeat="myCar in account">
+
+							<td class="font-weight-bold">{{ myCar.car.name }}</td>
+							<td class=""><span class="{{myCar.table_detail_payment}}">{{myCar.payment_account}}<span
+									class="{{myCar.table_detail_icon}}"></span></span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+</div>

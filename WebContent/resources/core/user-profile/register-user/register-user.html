@@ -1,0 +1,220 @@
+<div class="account-pages mt-3 mb-3">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="register-box">
+
+				<div class="register-content">
+
+					<div class="text-center">
+						<h3 class="text-dark-50 font-weight-bold">Register</h3>
+						<p class="text-muted">The inputs marked with: 
+								<span style="color: red;" ><i aria-hidden="true">*</i></span>  are required 
+								and the button will activate.
+								The password must contain minimum eight characters, at least one letter and one number.</p>						
+					</div>
+
+					<form name="userRegister">
+					<hr>
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="form-group">
+									<label for="fullname">First Name
+									<span style="color: red;" ><i aria-hidden="true">*</i></span></label> 
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i
+												class="fa fa-user-plus" aria-hidden="true"></i></span>
+										</div>
+										<input class="form-control"
+											id="first-name"
+											type="text" name="firstName" 
+											ng-model="register.name"
+											required>
+									</div>
+								</div>								
+								<div class="form-group">
+									<label for="fullname">Address</label> 
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i
+												class="fa fa-map-pin" aria-hidden="true"></i></span>
+										</div>
+										<input class="form-control"
+											id="address"
+											type="text" 
+											name="addRess" 
+											ng-model="register.direction">
+									</div>
+								</div>								
+								<div class="form-group">
+									<label for="fullname">Profession</label> 
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i
+												class="fa fa-briefcase" aria-hidden="true"></i></span>
+										</div>
+										<input class="form-control"
+											id="profesSion"
+											type="text" 
+											name="profession" 
+											ng-model="register.profesion">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="fullname">Password 
+									<span style="color: red;" ><i aria-hidden="true">*</i></span></label> 
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i
+												class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+										</div>
+										<input ng-class="{'form-control is-valid' : userRegister.passwordUser.$valid, 
+                                            'form-control' : true}"
+                                            id="passWord"
+											type="password" 
+											name="passwordUser" 
+											ng-model="register.newPassword"
+											ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/"
+											required>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="form-group">
+									<label for="fullname">Last Name
+									<span style="color: red;" ><i aria-hidden="true">*</i></span></label> 
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i
+												class="fa fa-user-plus" aria-hidden="true"></i></span>
+										</div>
+										<input class="form-control"
+											id="last-name"
+											type="text" 
+											name="last-Name" 
+											ng-model="register.last_name"
+											required>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="fullname">Phone</label> 
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i
+												class="fa fa-phone" aria-hidden="true"></i></span>
+										</div>
+										<input class="form-control"
+											id="cellphone"
+											type="text" 
+											name="cellPhone" 
+											ng-model="register.phone">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="emailaddress">Email
+									<span style="color: red;" ><i aria-hidden="true">*</i></span></label> 
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i
+												class="fa fa-envelope" aria-hidden="true"></i></span>
+										</div>
+										<input ng-class="{'form-control is-valid' : userRegister.mail.$valid, 
+											'form-control' : true}"
+											id="mail"
+											type="text" 
+											name="mail" 
+											ng-model="register.mail"
+											ng-pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/"
+											required>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="fullname">Confirm Password
+									<span style="color: red;" ><i aria-hidden="true">*</i></span></label>
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i
+												class="fa fa-lock" aria-hidden="true"></i></span>
+										</div>
+										<input ng-class="{'form-control is-valid' : userRegister.confirmUserPassword.$valid, 
+                                            'form-control' : true}"
+                                            id="confirm-passWord"
+											type="password" 
+											name="confirmUserPassword" 
+											ng-model="register.password"
+											ng-pattern="register.newPassword"
+											required>
+									</div>
+								</div>
+							</div>
+						</div>						
+					</div>
+					<hr>
+					<div class="form-group">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" class="custom-control-input"
+								id="checkbox-signup" ng-model="checkActivate" ng-click="register.cardnumber = ''"> <label
+								class="custom-control-label" for="checkbox-signup">
+								Activate <label class="text-muted"> account? (optional)</label>
+							</label>
+						</div>
+						<div class="container text-center" ng-show="checkActivate">
+						<div class="row">
+							<div class="col"></div>
+							<div class="col">
+								<div class="form-group">
+									<label for="fullname">Register your Card number
+									<span style="color: red;" ><i aria-hidden="true">*</i></span></label>
+									<div class="form-group">
+										<div class="input-group">
+											<input ng-class="{'form-control is-valid' : userRegister.cardNumber.$valid, 
+                                            'form-control' : true}"
+												id="card-number"
+												type="text" 
+												name="cardNumber" 
+												ng-model="register.cardnumber"
+												ng-pattern="/\b\d{4}[ -]?\d{4}[ -]?\d{4}[ -]?\d{4}\b/"
+												required>
+										</div>
+									</div>
+								<p class="text-muted">Fill correctly your card to activate the button.</p>	
+								</div>
+							</div>
+							<div class="col"></div>
+						</div>						
+					</div>
+					</div>
+
+					<hr>
+					<div class="form-group mb-0 text-center" ng-show="!checkActivate">
+						<button 
+							class="btn btn-primary" 
+							type="submit"
+							ng-click="registerUser( register )"
+							ng-disabled="!userRegister.mail.$valid || 
+							!userRegister.passwordUser.$valid || !userRegister.confirmUserPassword.$valid">Sign Up</button>
+							<button type="button" id="reset" class="btn btn-secondary" ng-click="resetValues()">Reset</button>
+					</div>
+					<div class="form-group mb-0 text-center" ng-show="checkActivate">
+						<button 
+							class="btn btn-primary" 
+							type="submit"
+							ng-click="registerUser( register )"
+							ng-disabled="!userRegister.mail.$valid || !userRegister.passwordUser.$valid ||
+							!userRegister.confirmUserPassword.$valid || !userRegister.cardNumber.$valid">Sign Up</button>
+							<button type="button" id="reset" class="btn btn-secondary" ng-click="resetValues()">Reset</button>
+					</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+    $("#cellphone").mask("(00) 0000-0000");
+    </script>
+	<script type="text/javascript">
+    $("#card-number").mask("0000-0000-0000-0000");
+    </script>
+</div>

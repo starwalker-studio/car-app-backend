@@ -1,0 +1,239 @@
+<div class="display-card-row-container">
+			
+	<div class="profile-body">
+			<h3 class="font-weight-bold">Profile</h3>
+		<hr>
+		<div class="info-profile">
+			<div class="info-box-title">
+				<p class="font-weight-bold input-edit-data profile-msj-fix">Profile Message:</p>
+			</div>
+			<div class="info-box-data">
+				<div class="input-group input-edit-data">
+					<textarea class="form-control" id="text-area" ng-model="user.user_msj" 
+								ng-disabled="editProfileMsj"></textarea>						
+					<div class="input-group-append">
+						<a class="btn btn-secondary" type="button" ng-click="editProfileMsj = false" ><i
+							class="fa fa-pencil-square-o"></i> Edit</a>
+					</div>
+					<div class="input-group-append">
+						<a class="btn btn-danger" type="button"
+						ng-show="!editProfileMsj" 
+						ng-click="resetEdit( 'resetProfileMsj' ); editProfileMsj = true" ><i
+							class="fa fa-times"></i> Cancel</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="info-profile-data">
+			<div class="info-box-title">
+				<p class="font-weight-bold input-edit-data">First Name:</p>
+				<p class="font-weight-bold input-edit-data">Last Name:</p>
+				<p class="font-weight-bold input-edit-data">Phone:</p>
+				<p class="font-weight-bold input-edit-data">Profesion:</p>
+				<p class="font-weight-bold input-edit-data">Address:</p>
+			</div>
+			<div class="info-box-data">
+				<div class="input-group input-edit-data">
+					<input class="form-control input-group-sm" ng-model="user.name" ng-disabled="editName">
+					<div class="input-group-append">
+						<a class="btn btn-secondary" type="button" 
+							ng-click="editName = false" ><i
+							class="fa fa-pencil-square-o"></i> Edit</a>
+					</div>
+					<div class="input-group-append">
+							<a class="btn btn-danger" type="button"
+							ng-show="!editName" 
+							ng-click="resetEdit( 'resetName' ); editName = true"><i
+							class="fa fa-times"></i> Cancel</a>
+					</div>
+				</div>
+				<div class="input-group input-edit-data">
+					<input class="form-control input-group-sm" ng-model="user.last_name" ng-disabled="editLastName">
+					<div class="input-group-append">
+						<a class="btn btn-secondary" type="button" ng-click="editLastName = false"><i
+							class="fa fa-pencil-square-o"></i> Edit</a>
+					</div>
+					<div class="input-group-append">
+							<a class="btn btn-danger" type="button"
+							ng-show="!editLastName" 
+							ng-click="resetEdit( 'resetLastName' ); editLastName = true" ><i
+								class="fa fa-times"></i> Cancel</a>
+					</div>
+				</div>
+				<div class="input-group input-edit-data">
+					<input class="form-control input-group-sm" id="celphone" ng-model="user.phone" 
+						ng-disabled="editPhone">
+					<div class="input-group-append">
+						<a class="btn btn-secondary" type="button" ng-click="editPhone = false"><i
+							class="fa fa-pencil-square-o"></i> Edit</a>
+					</div>
+					<div class="input-group-append">
+							<a class="btn btn-danger" type="button"
+							ng-show="!editPhone" 
+							ng-click="resetEdit( 'resetPhone' ); editPhone = true" ><i
+								class="fa fa-times"></i> Cancel</a>
+					</div>
+				</div>
+				<div class="input-group input-edit-data">
+					<input class="form-control input-group-sm" ng-model="user.profesion" ng-disabled="editProfesion">
+					<div class="input-group-append">
+						<a class="btn btn-secondary" type="button" ng-click="editProfesion = false"><i
+							class="fa fa-pencil-square-o"></i> Edit</a>
+					</div>
+					<div class="input-group-append">
+							<a class="btn btn-danger" type="button"
+							ng-show="!editProfesion" 
+							ng-click="resetEdit( 'resetProfesion' ); editProfesion = true" ><i
+								class="fa fa-times"></i> Cancel</a>
+					</div>
+				</div>
+				<div class="input-group input-edit-data">
+					<textarea class="form-control" id="exampleFormControlTextarea1"
+						ng-model="user.direction" ng-disabled="editAddress"></textarea>
+					<div class="input-group-append">
+						<a class="btn btn-secondary" type="button" ng-click="editAddress = false"><i
+							class="fa fa-pencil-square-o"></i> Edit</a>
+					</div>
+					<div class="input-group-append">
+							<a class="btn btn-danger" type="button"
+							ng-show="!editAddress" 
+							ng-click="resetEdit( 'resetAddress' ); editAddress = true" ><i
+								class="fa fa-times"></i> Cancel</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<hr>								
+			<div class="card-info">
+				<h6 class="font-weight-bold">Change Mail or Password?</h6>
+				<input type="checkbox" 
+						ng-model="checkboxModel.value" 
+						ng-click="newUserMailPassword.confirmPassword = '' ;newUserMailPassword.newMail = '';
+							newUserMailPassword.newPassword = '';newUserMailPassword.confirmNewPassword = '';
+							editMail = true;editPassword = true; ">
+							
+			</div>
+			<form name="changeMP">
+				<div class="adverstisment-style">
+					<h6><strong>Once you checked the box, the button will be disabled, unless you change your new email or password is valid.</strong></h6>	
+			   	</div>
+				<div class="mail-password-box" ng-show="checkboxModel.value">
+					<div class="mail-password-edit">
+						<p class="font-weight-bold input-edit-data">Your Login
+							Password:</p>
+						<div ng-show="changeMP.confirmPassword.$valid">
+							<p class="font-weight-bold input-edit-data">New Mail:</p>
+							<p class="font-weight-bold input-edit-data">New Password:</p>
+							<p class="font-weight-bold input-edit-data">Confirm new password:</p>
+						</div>
+					</div>
+					<div class="mail-password-edit-box">
+						<div class="input-group input-edit-data">
+							<input class="form-control input-group-sm" 
+								type="password"
+								name="confirmPassword" 
+								ng-model="newUserMailPassword.confirmPassword"
+								ng-pattern="user.password"
+								required>
+						</div>
+						<div ng-show="changeMP.confirmPassword.$valid">
+							<div class="input-group input-edit-data">
+								<input ng-class="{'form-control' : true,
+								'form-control is-valid' : changeMP.newMail.$valid}"
+                                         	name="newMail"
+									type="text" 
+									ng-model="newUserMailPassword.newMail" 
+									ng-disabled="editMail"
+									ng-pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/"
+									required>
+								<div class="input-group-append">
+									<a class="btn btn-secondary" ng-click="editMail = false"><i
+										class="fa fa-pencil-square-o"></i> Edit</a>
+								</div>
+								<div class="input-group-append">
+									<a class="btn btn-danger" type="button"
+									ng-show="!editMail" 
+									ng-click="newUserMailPassword.newMail = '';editMail = true"><i
+										class="fa fa-times"></i> Cancel</a>
+								</div>
+							</div>
+							<div class="input-group input-edit-data">
+								<input ng-class="{'form-control is-valid' : changeMP.newPassword.$valid, 
+                                         'form-control input-group-sm' : true}"
+									type="password"
+									name="newPassword"
+									ng-model="newUserMailPassword.newPassword" 
+									ng-disabled="editPassword"
+									ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/"
+									required>									
+								<div class="input-group-append">
+									<a class="btn btn-secondary" ng-click="editPassword = false"><i
+										class="fa fa-pencil-square-o"></i> Edit</a>
+								</div>
+								<div class="input-group-append">
+									<a class="btn btn-danger" type="button"
+									ng-show="!editPassword" 
+									ng-click="newUserPassword = '';editPassword = true;newUserMailPassword.newPassword = '';
+												newUserMailPassword.confirmNewPassword = ''" ><i
+										class="fa fa-times"></i> Cancel</a>
+								</div>
+							</div>
+							<div class="input-group input-edit-data">
+								<input ng-class="{'form-control is-valid' : changeMP.confirmNewPassword.$valid, 
+                                         'form-control input-group-sm' : true}"
+									type="password"
+									name="confirmNewPassword"
+									ng-model="newUserMailPassword.confirmNewPassword" 
+									ng-disabled="!changeMP.newPassword.$valid"
+									ng-pattern="newUserMailPassword.newPassword"
+									required>
+									<div class="must-contain-edit-password">
+										<h6><strong>Your password must contain, minimum eight characters.</strong></h6>
+									   	<h6><strong>At least one letter and one number.</strong></h6>
+									</div>
+								</div>
+								<div class="alert alert-warning" 
+									ng-if="newUserMailPassword.newPassword === newUserMailPassword.confirmPassword" 
+									role="alert">			
+								  <h6><strong>Its the same password!</strong></h6>
+								</div>	
+								<div class="alert alert-warning" 
+									ng-if="newUserMailPassword.newMail === user.mail" 
+									role="alert">			
+								  <h6><strong>Its the same mail!</strong></h6>
+								</div>	
+							</div>
+						</div>
+					</div>
+			<hr>
+			<div>
+				<button type="button" 
+					class="btn btn-success" 
+					ng-click="saveChanges()"
+					ng-show="!checkboxModel.value"
+					ng-disabled="editProfileMsj && editName 
+						&& editLastName && editPhone
+						&& editProfesion && editAddress">Save
+					Changes</button>
+				<button type="button" 
+					class="btn btn-success"
+					type="submit"
+					ng-click="saveChanges()"
+					ng-show="checkboxModel.value"
+					ng-disabled="!changeMP.confirmNewPassword.$valid 
+						&& !changeMP.newMail.$valid">Save
+					Changes</button>
+				<button type="button" id="reset" class="btn btn-secondary" ng-click="resetValues(); editProfileMsj = true; 
+				editName = true; editLastName = true; 
+				editPhone = true; editProfesion = true; 
+				editAddress = true;">Reset</button>
+			</div>
+			</form>
+		</div>
+	</div>
+	<script type="text/javascript">
+    $("#celphone").mask("(00) 0000-0000");
+    </script>
+		
+</div>
